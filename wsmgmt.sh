@@ -4,7 +4,7 @@ function __prompt_echo_workspace_label {
 	fi
 }
 
-function __scan_path_for_tools {
+function __create_label_from_path {
 	WS_LABEL=""
 	IFS='/' read -r -a array <<< $PATH
 	numslash=0
@@ -47,7 +47,7 @@ function ws {
 		if [ -f ".workspacerc" ]; then
 			source .workspacerc
 			if [ -z "${WS_LABEL}" ]; then
-				__scan_path_for_tools
+				__create_label_from_path
 			fi
 		else
 			:
