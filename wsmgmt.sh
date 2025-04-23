@@ -48,7 +48,7 @@ function ws {
 		fi
 
 		if [ -f ".workspacerc" ]; then			# if there is a .workspacerc script in the workspace folder to initialise the environment
-			source .workspacerc			# source that script
+			source ./.workspacerc			# source that script
 			if [ -z "${WS_LABEL}" ]; then		# if that script has not specified a label for the workspace
 				__create_label_from_path	# generate that label based on the new folders in $PATH
 			fi
